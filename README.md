@@ -14,8 +14,7 @@ This project demonstrates a microservices architecture in Go, using RabbitMQ for
 - Real-time system monitoring (memory, disk, and CPU)
 - Decoupled microservices using RabbitMQ (fanout exchange)
 - REST API and web dashboard
-- Cross-platform (macOS, Linux)
-- Easily extensible (add more metrics or consumers)
+- Easily extensible
 
 ## Running Locally
 
@@ -40,16 +39,3 @@ This project demonstrates a microservices architecture in Go, using RabbitMQ for
    ```
 2. Visit [http://localhost:8080](http://localhost:8080) for the dashboard.
 3. Access RabbitMQ management at [http://localhost:15672](http://localhost:15672) (guest/guest).
-
-## Configuration
-
-- RabbitMQ URL, disk path, and other settings can be set via environment variables.
-
-## Why RabbitMQ?
-
-- Demonstrates pub/sub, decoupling, and scalable event-driven architecture.
-- Easy to add new consumers (e.g., alerting, logging) without changing publishers.
-
----
-
-**Now supports monitoring of memory, disk, and CPU usage!**
