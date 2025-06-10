@@ -1,0 +1,49 @@
+# Binaries
+/bin/
+/memory-service
+/disk-service
+/cpu-service
+/web-ui
+
+# Build output
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of go build
+*.out
+
+# Vendor directory
+vendor/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+**/tmp/
+**/dist/
+**/build/
+docker-compose.override.yml
+
+# Ignore hostfs mount
+hostfs/
+
+# Go coverage files
+*.coverprofile
+*.cov
+
+# Workspace settings
+*.code-workspace

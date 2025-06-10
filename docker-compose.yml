@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  memory-service:
+    build:
+      context: .
+      dockerfile: cmd/memory-service/Dockerfile
+    depends_on:
+      - rabbitmq
+    restart: unless-stopped
+  disk-service:
+    build:
+      context: .
+      dockerfile: cmd/disk-service/Dockerfile
+    depends_on:
+      - rabbitmq
+    restart: unless-stopped
+    volumes:
+      - /:/hostfs:ro
+  cpu-service:
+    build:
+      context: .
+      dockerfile: cmd/cpu-service/Dockerfile
+    depends_on:
+      - rabbitmq
+    restart: unless-stopped
+  web-ui:
+    build:
+      context: .
+      dockerfile: cmd/web-ui/Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbitmq
+    restart: unless-stopped
